@@ -1,0 +1,20 @@
+{
+  "name": "bsdiff-neon",
+  "version": "0.1.0",
+  "author": "Willem Olding (ChainSafe)",
+  "description": "A Neon node extension that wraps the Rust bsdiff crate",
+  "main": "index.node",
+  "scripts": {
+    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
+    "build-debug": "npm run build --",
+    "build-release": "npm run build -- --release",
+    "install": "npm run build-release",
+    "test": "cargo test",
+    "test:binding": "npm run build-debug && mocha"
+  },
+  "license": "LGPL-3.0",
+  "devDependencies": {
+    "cargo-cp-artifact": "^0.1",
+    "mocha": "^10.2.0"
+  }
+}
