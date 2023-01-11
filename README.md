@@ -4,6 +4,19 @@
 
 This project was bootstrapped by [create-neon](https://www.npmjs.com/package/create-neon).
 
+## Example
+
+```javascript
+const bsdiff = require("bsdiff-neon");
+const crypto = require("crypto"); // for random values
+
+const oldData = crypto.randomBytes(1024).buffer;
+const newData = crypto.randomBytes(1024).buffer;
+
+const diff = bsdiff.diff(oldData, newData);
+const newRecovered = bsdiff.patch(oldData, diff, 1024);
+```
+
 ## Installing bsdiff-neon
 
 Installing bsdiff-neon requires a [supported version of Node and Rust](https://github.com/neon-bindings/neon#platform-support).

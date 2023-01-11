@@ -19,7 +19,6 @@ fn neon_patch(mut cx: FunctionContext) -> JsResult<JsArrayBuffer> {
     let patch = cx.argument::<JsArrayBuffer>(1)?;
     let length = cx.argument::<JsNumber>(2)?;
 
-
     let mut out = vec![0; length.value(&mut cx) as usize];
     let mut patch_cursor = Cursor::new(patch.as_slice(&cx));
     bsdiff::patch::patch(old.as_slice(&cx), &mut patch_cursor, &mut out).expect("failed to patch");

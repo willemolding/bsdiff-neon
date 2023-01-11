@@ -4,6 +4,7 @@
   "author": "Willem Olding (ChainSafe)",
   "description": "A Neon node extension that wraps the Rust bsdiff crate",
   "main": "index.node",
+  "types": "index.d.ts",
   "scripts": {
     "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
     "build-debug": "npm run build --",
