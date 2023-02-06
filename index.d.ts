@@ -13,4 +13,4 @@ export function diff(oldData: ArrayBuffer, newData: ArrayBuffer): ArrayBuffer;
  * @param diff The diff calculated by the diff function
  * @param size The size of the output. Note this should be included along with the transmission of the diff
  */
-export function patch(oldData: ArrayBuffer, diff: ArrayBuffer, size: Number): number;
+export function patch(oldData: ArrayBuffer, diff: ArrayBuffer, size: Number): ArrayBuffer;
